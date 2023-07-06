@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBancaycanhModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CTHDB">
+    <Key>
+      <PropertyRef Name="MaCTB" />
+    </Key>
+    <Property Name="MaCTB" Type="Int32" Nullable="false" />
+    <Property Name="MaHDB" Type="Int32" />
+    <Property Name="MaSP" Type="Int32" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Tong" Type="Int32" />
+    <Property Name="Gia" Type="String" />
+    <NavigationProperty Name="HDB" Relationship="Self.FK_CTHDB_HDB" FromRole="CTHDB" ToRole="HDB" />
+    <NavigationProperty Name="Sanpham" Relationship="Self.FK_CTHDB_Sanpham" FromRole="CTHDB" ToRole="Sanpham" />
+    <NavigationProperty Name="HoaDonBan" Relationship="QLBancaycanhModel.FK_CTHDB_HoaDonBan" FromRole="CTHDB" ToRole="HoaDonBan" />
+  </EntityType>
+  <EntityType Name="CTHDN">
+    <Key>
+      <PropertyRef Name="MaCTN" />
+    </Key>
+    <Property Name="MaCTN" Type="Int32" Nullable="false" />
+    <Property Name="MaHDN" Type="Int32" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Tong" Type="Int32" />
+    <Property Name="Gia" Type="Int32" />
+    <NavigationProperty Name="HDNN" Relationship="Self.FK_CTHDN_HDNN" FromRole="CTHDN" ToRole="HDNN" />
+  </EntityType>
+  <EntityType Name="Giohang">
+    <Key>
+      <PropertyRef Name="Magio" />
+    </Key>
+    <Property Name="Magio" Type="Int32" Nullable="false" />
+    <Property Name="Tensp" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="Tong" Type="Int32" />
+    <Property Name="Masp" Type="Int32" />
+    <NavigationProperty Name="Sanpham" Relationship="Self.FK_Giohang_Sanpham" FromRole="Giohang" ToRole="Sanpham" />
+  </EntityType>
+  <EntityType Name="HDB">
+    <Key>
+      <PropertyRef Name="MaHDB" />
+    </Key>
+    <Property Name="MaHDB" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="NgaylapHD" Type="DateTime" Precision="3" />
+    <Property Name="Ngaygiaohang" Type="DateTime" Precision="3" />
+    <Property Name="Diachiban" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="MaKH" Type="Int32" />
+    <NavigationProperty Name="CTHDBs" Relationship="Self.FK_CTHDB_HDB" FromRole="HDB" ToRole="CTHDB" />
+    <NavigationProperty Name="Khachhang" Relationship="Self.FK_HDB_Khachhang" FromRole="HDB" ToRole="Khachhang" />
+  </EntityType>
+  <EntityType Name="HDNN">
+    <Key>
+      <PropertyRef Name="MaHDN" />
+    </Key>
+    <Property Name="MaHDN" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="Int32" />
+    <Property Name="Diachinhap" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaynhap" Type="DateTime" Precision="3" />
+    <Property Name="NgaylapHD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CTHDNs" Relationship="Self.FK_CTHDN_HDNN" FromRole="HDNN" ToRole="CTHDN" />
+    <NavigationProperty Name="Nhanvien" Relationship="Self.FK_HDNN_Nhanvien" FromRole="HDNN" ToRole="Nhanvien" />
+  </EntityType>
+  <EntityType Name="Khachhang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="Int32" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDTKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DiachiKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HDBs" Relationship="Self.FK_HDB_Khachhang" FromRole="Khachhang" ToRole="HDB" />
+    <NavigationProperty Name="HoaDonBans" Relationship="QLBancaycanhModel.FK_HoaDonBan_Khachhang" FromRole="Khachhang" ToRole="HoaDonBan" />
+  </EntityType>
+  <EntityType Name="LoaiSP">
+    <Key>
+      <PropertyRef Name="Maloai" />
+    </Key>
+    <Property Name="Maloai" Type="Int32" Nullable="false" />
+    <Property Name="Tenloai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sanphams" Relationship="Self.FK_Sanpham_LoaiSP" FromRole="LoaiSP" ToRole="Sanpham" />
+  </EntityType>
+  <EntityType Name="Nhanvien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="Int32" Nullable="false" />
+    <Property Name="TenNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Anh" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HDNNs" Relationship="Self.FK_HDNN_Nhanvien" FromRole="Nhanvien" ToRole="HDNN" />
+    <NavigationProperty Name="Tinchamsoccays" Relationship="Self.FK_Tinchamsoccay_Nhanvien" FromRole="Nhanvien" ToRole="Tinchamsoccay" />
+  </EntityType>
+  <EntityType Name="Sanpham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Khuyenmai" Type="Int32" />
+    <Property Name="giamoi" Type="Int32" />
+    <Property Name="giacu" Type="Int32" />
+    <Property Name="Maloai" Type="Int32" />
+    <Property Name="Anh" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CTHDBs" Relationship="Self.FK_CTHDB_Sanpham" FromRole="Sanpham" ToRole="CTHDB" />
+    <NavigationProperty Name="Giohangs" Relationship="Self.FK_Giohang_Sanpham" FromRole="Sanpham" ToRole="Giohang" />
+    <NavigationProperty Name="LoaiSP" Relationship="Self.FK_Sanpham_LoaiSP" FromRole="Sanpham" ToRole="LoaiSP" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tinchamsoccay">
+    <Key>
+      <PropertyRef Name="Matin" />
+    </Key>
+    <Property Name="Matin" Type="Int32" Nullable="false" />
+    <Property Name="Tentin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Anh" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Noidung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaNV" Type="Int32" />
+    <NavigationProperty Name="Nhanvien" Relationship="Self.FK_Tinchamsoccay_Nhanvien" FromRole="Tinchamsoccay" ToRole="Nhanvien" />
+  </EntityType>
+  <EntityType Name="Us">
+    <Key>
+      <PropertyRef Name="MaNguoiDung" />
+    </Key>
+    <Property Name="Taikhoan" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Matkhau" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MaNguoiDung" Type="Int32" Nullable="false" />
+    <Property Name="HoTen" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_CTHDB_HDB">
+    <End Role="HDB" Type="Self.HDB" Multiplicity="0..1" />
+    <End Role="CTHDB" Type="Self.CTHDB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDB">
+        <PropertyRef Name="MaHDB" />
+      </Principal>
+      <Dependent Role="CTHDB">
+        <PropertyRef Name="MaHDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHDB_Sanpham">
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="0..1" />
+    <End Role="CTHDB" Type="Self.CTHDB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanpham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CTHDB">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHDN_HDNN">
+    <End Role="HDNN" Type="Self.HDNN" Multiplicity="0..1" />
+    <End Role="CTHDN" Type="Self.CTHDN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDNN">
+        <PropertyRef Name="MaHDN" />
+      </Principal>
+      <Dependent Role="CTHDN">
+        <PropertyRef Name="MaHDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Giohang_Sanpham">
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="0..1" />
+    <End Role="Giohang" Type="Self.Giohang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanpham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="Giohang">
+        <PropertyRef Name="Masp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDB_Khachhang">
+    <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
+    <End Role="HDB" Type="Self.HDB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khachhang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="HDB">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDNN_Nhanvien">
+    <End Role="Nhanvien" Type="Self.Nhanvien" Multiplicity="0..1" />
+    <End Role="HDNN" Type="Self.HDNN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhanvien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="HDNN">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sanpham_LoaiSP">
+    <End Role="LoaiSP" Type="Self.LoaiSP" Multiplicity="0..1" />
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiSP">
+        <PropertyRef Name="Maloai" />
+      </Principal>
+      <Dependent Role="Sanpham">
+        <PropertyRef Name="Maloai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tinchamsoccay_Nhanvien">
+    <End Role="Nhanvien" Type="Self.Nhanvien" Multiplicity="0..1" />
+    <End Role="Tinchamsoccay" Type="Self.Tinchamsoccay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhanvien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="Tinchamsoccay">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLBancaycanhEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTHDBs" EntityType="Self.CTHDB" />
+    <EntitySet Name="CTHDNs" EntityType="Self.CTHDN" />
+    <EntitySet Name="Giohangs" EntityType="Self.Giohang" />
+    <EntitySet Name="HDBs" EntityType="Self.HDB" />
+    <EntitySet Name="HDNNs" EntityType="Self.HDNN" />
+    <EntitySet Name="Khachhangs" EntityType="Self.Khachhang" />
+    <EntitySet Name="LoaiSPs" EntityType="Self.LoaiSP" />
+    <EntitySet Name="Nhanviens" EntityType="Self.Nhanvien" />
+    <EntitySet Name="Sanphams" EntityType="Self.Sanpham" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tinchamsoccays" EntityType="Self.Tinchamsoccay" />
+    <EntitySet Name="Uses" EntityType="Self.Us" />
+    <AssociationSet Name="FK_CTHDB_HDB" Association="Self.FK_CTHDB_HDB">
+      <End Role="HDB" EntitySet="HDBs" />
+      <End Role="CTHDB" EntitySet="CTHDBs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHDB_Sanpham" Association="Self.FK_CTHDB_Sanpham">
+      <End Role="Sanpham" EntitySet="Sanphams" />
+      <End Role="CTHDB" EntitySet="CTHDBs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHDN_HDNN" Association="Self.FK_CTHDN_HDNN">
+      <End Role="HDNN" EntitySet="HDNNs" />
+      <End Role="CTHDN" EntitySet="CTHDNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Giohang_Sanpham" Association="Self.FK_Giohang_Sanpham">
+      <End Role="Sanpham" EntitySet="Sanphams" />
+      <End Role="Giohang" EntitySet="Giohangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDB_Khachhang" Association="Self.FK_HDB_Khachhang">
+      <End Role="Khachhang" EntitySet="Khachhangs" />
+      <End Role="HDB" EntitySet="HDBs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDNN_Nhanvien" Association="Self.FK_HDNN_Nhanvien">
+      <End Role="Nhanvien" EntitySet="Nhanviens" />
+      <End Role="HDNN" EntitySet="HDNNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sanpham_LoaiSP" Association="Self.FK_Sanpham_LoaiSP">
+      <End Role="LoaiSP" EntitySet="LoaiSPs" />
+      <End Role="Sanpham" EntitySet="Sanphams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tinchamsoccay_Nhanvien" Association="Self.FK_Tinchamsoccay_Nhanvien">
+      <End Role="Nhanvien" EntitySet="Nhanviens" />
+      <End Role="Tinchamsoccay" EntitySet="Tinchamsoccays" />
+    </AssociationSet>
+    <EntitySet Name="HoaDonBans" EntityType="QLBancaycanhModel.HoaDonBan" />
+    <AssociationSet Name="FK_CTHDB_HoaDonBan" Association="QLBancaycanhModel.FK_CTHDB_HoaDonBan">
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+      <End Role="CTHDB" EntitySet="CTHDBs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDonBan_Khachhang" Association="QLBancaycanhModel.FK_HoaDonBan_Khachhang">
+      <End Role="Khachhang" EntitySet="Khachhangs" />
+      <End Role="HoaDonBan" EntitySet="HoaDonBans" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HoaDonBan">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaNV" Type="Int32" />
+    <Property Name="NgaylapHD" Type="DateTime" Precision="3" />
+    <Property Name="Ngaygiaohang" Type="DateTime" Precision="3" />
+    <Property Name="Diachiban" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="MaKH" Type="Int32" />
+    <NavigationProperty Name="CTHDBs" Relationship="QLBancaycanhModel.FK_CTHDB_HoaDonBan" FromRole="HoaDonBan" ToRole="CTHDB" />
+    <NavigationProperty Name="Khachhang" Relationship="QLBancaycanhModel.FK_HoaDonBan_Khachhang" FromRole="HoaDonBan" ToRole="Khachhang" />
+  </EntityType>
+  <Association Name="FK_CTHDB_HoaDonBan">
+    <End Type="QLBancaycanhModel.HoaDonBan" Role="HoaDonBan" Multiplicity="0..1" />
+    <End Type="QLBancaycanhModel.CTHDB" Role="CTHDB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDonBan">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="CTHDB">
+        <PropertyRef Name="MaHDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDonBan_Khachhang">
+    <End Type="QLBancaycanhModel.Khachhang" Role="Khachhang" Multiplicity="0..1" />
+    <End Type="QLBancaycanhModel.HoaDonBan" Role="HoaDonBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khachhang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="HoaDonBan">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

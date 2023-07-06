@@ -1,0 +1,62 @@
+.rightGH .table2 {
+    border: 3px solid black;
+    width: 95%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+    margin-left: 5%;
+}
+
+.rightGH .table2 td {
+    text-align: right;
+    padding-right: 3%;
+}
+
+.projectsGH {
+    max-width: 1800px;
+    margin: 0px auto;
+}
+
+.thanhtoan {
+    margin-top: 4%;
+    width: 100%;
+    height: 100px;
+}
+
+.thanhtoan button {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    background-color: aqua;
+    margin-left: 72%;
+    border-radius: 5%;
+    border: none;
+    font-weight: bold;
+}
+
+.thanhtoan button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.capnhatGH {
+    border-top: 1px solid red;
+    width: 25%;
+    padding: 10px;
+    text-align: right;
+    float: right;
+}
+
+.capnhatGH button {
+    border: none;
+    background-color: orange;
+    line-height: 45px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.capnhatGH:hover button {
+    cursor: pointer;
+    background-color: blue;
+}

@@ -1,0 +1,48 @@
+.projectsVC {
+    max-width: 1600px;
+    margin: 0px auto;
+}
+
+.projectsVC .row .content div {
+    height: 50px;
+    width: 98%;
+    background-color: white;
+    padding: 20px;
+    font-weight: 25px;
+    margin-bottom: 10px;
+}
+
+.projectsVC .row .content div a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.projectsVC .row .content div a:hover {
+    color: blue;
+}
+
+.content1 {
+    background-color: white;
+    width: 100%;
+    margin-top: 28px;
+    padding-top: 22px;
+}
+
+.content1 .table {
+    width: 100%;
+    /* border: 1px solid red; */
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.content1 .table td img {
+    width: 200px;
+}
+
+.content1.table tr td:nth-child(n+3) {
+    text-align: center;
+}

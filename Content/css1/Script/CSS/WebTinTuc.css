@@ -1,0 +1,9 @@
+.seTT1{width: 100%;background: url(Banner1.jpg); z-index: -1; margin-top: 20px;}
+
+.seTT1 .seTT11{max-width: 1200px; margin: 0px auto; background-color: white; z-index: 1;}
+
+
+.box{border: 1px solid black; margin: 10px; width: 31%;}
+
+.seTT1 .divnoibat .projects .row .box p .tiep:hover{color: blue;}
+.seTT1 .divnoibat .projects .row .box p .tiep{color: red;text-decoration: none;}

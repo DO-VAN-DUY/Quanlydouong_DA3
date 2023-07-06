@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "Chitiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="~/Scripts/angularScript/chitiet.js"></script>
+
+<div ng-controller="ChiTietCtrl">
+    <div ng-init="LoadSP(@ViewBag.MaSP)"></div>
+    <div class="breadcrumb-area">
+    
+            <div class="breadcrumb-content">
+                <h2>Xem chi tiết sản phẩm</h2>
+                <ul style="font-size:25px">
+                    <li><a href="/Home/Index">Trang chủ</a></li>
+                    <li class="active">Chi tiết</li>
+                </ul>
+            </div>
+        
+    </div>
+    <div class="sp-area">
+        <div class="container">
+            <div class="sp-nav">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <div id="left_column">
+
+                            <div class="block left-module">
+                                <p class="title_block"><span class="fa fa-pagelines"></span>CAM KẾT BÁN HÀNG</p>
+
+                                <div class="block_content">
+
+                                    <div class="layered layered-category">
+                                        <div class="layered-content">
+                                            <ul class="tree-menu">
+                                                <li><p>- Cung cấp các loại cây cảnh đa dạng với giá hợp lý.</p></li>
+                                                <li> <p>- Miễn phí giao hàng cho đơn hàng trên <span>500.000đ</span>(áp dụng tại các quận nội thành Hà Nội).</p></li>
+                                                <li><p>- Tư vấn và hướng dẫn chăm sóc cây tận tình.</p></li>
+                                                <li><p>- Tư vấn kỹ lưỡng các vấn đề phong thuỷ, hợp mệnh - hợp tuổi.</p></li>
+                                                <li> <p>- Hỗ trợ đổi trả sản phẩm trong vòng <span>3 ngày</span> sau khi mua.</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <div class="col-lg-5 col-md-5 product-item">
+                            <div class="sp-img_area">
+                                <div class="zoompro-border" style="border:none;">
+                                    <center><img class="zoompro" src="~/Content/images/product-detail/cayuuthich/{{SanPham.Anh}}" data-zoom-image="~/assets/images/single-product/large-size/1.jpg" /></center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="sp-content">
+                                <div class="sp-essential_stuff">
+                                    <ul>
+                                        <li>Tên sản phẩm: <h4>{{SanPham.TenSP}}</h4></li>
+
+                                    </ul>
+                                </div>
+                                <br />
+                                <div class="sp-essential_stuff">
+                                    <ul>
+                                        <li>Giá bán: <a href="javascript:void(0)">{{SanPham.Gia}}</a></li>
+                                        <li>Mã đồ uống: <a href="javascript:void(0)"><span>{{SanPham.MaSP}}</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="quantity">
+                                    <label>Số lượng</label>
+                                    <div class="cart-plus-minus">
+                                        <input class="cart-plus-minus-box" value="1" type="text">
+                                        <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                    </div>
+                                </div>
+                                <div class="qty-btn_area">
+                                    <ul>
+                                        <li><a class="qty-cart_btn" ng-click="addToCart(SanPham)">Add To Cart</a></li>
+                                        <li><a class="qty-wishlist_btn" href="wishlist.html" data-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
+                                        <li><a class="qty-compare_btn" href="compare.html" data-toggle="tooltip" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                    </ul>
+                                </div>
+                                <br />
+                                <div class="hiraola-social_link">
+                                    <ul>
+                                        <li class="facebook">
+                                            <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank" title="Facebook">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="twitter">
+                                            <a href="https://twitter.com/" data-toggle="tooltip" target="_blank" title="Twitter">
+                                                <i class="fab fa-twitter-square"></i>
+                                            </a>
+                                        </li>
+                                        <li class="youtube">
+                                            <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank" title="Youtube">
+                                                <i class="fab fa-youtube"></i>
+                                            </a>
+                                        </li>
+                                        <li class="google-plus">
+                                            <a href="https://www.plus.google.com/discover" data-toggle="tooltip" target="_blank" title="Google Plus">
+                                                <i class="fab fa-google-plus"></i>
+                                            </a>
+                                        </li>
+                                        <li class="instagram">
+                                            <a href="https://rss.com/" data-toggle="tooltip" target="_blank" title="Instagram">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                    <div class="content-page">
+                        <div class="container">
+                            <div class="category-featured Vegetables">
+                                <h2 class="page-heading">
+                                    <span class="page-heading-title"><img alt="fashion" src="~/Content/images/commerce-tag.png" />Sản phẩm cùng loại</span>
+                                </h2>
+                                <div class="col-sm-12">
+                                    <div class="product-featured clearfix">
+                                        <div class="row">
+                                            <div class="box-right">
+                                                <ul class="product-list">
+                                                    <li ng-repeat="item in SanPham.listSPCungLoai" class="col-sm-12 product-item" style="width:250px;">
+                                                        <div class="left-block">
+                                                            <a href="/SanPham/Chitiet/?MaSp={{item.MaSP}}">
+                                                                <img style="width:200px;height:210px " class="img-responsive" alt="product"
+                                                                     src="~/Content/images/{{item.Anh}}" />
+                                                            </a>
+                                                            <div class="quick-view">
+                                                                <a title="Add to my wishlist" class="heart" href="#"></a>
+                                                                <a title="Add to compare" class="compare" href="#"></a>
+                                                                <a title="Quick view" href="~/Content/images/product-detail/{{item.Anh}}" class="search fancybox-button"></a>
+                                                            </div>
+                                                            <div class="add-to-cart">
+                                                                <a class="add-item-to-cart" ng-click="addToCart(item)" href="#" data-name="{{item.TenSP}}"
+                                                                   data-price="{{item.GiaKM}}" data-image="~/Content/images/product-detail/vegetables/spinach_300x300.jpg" data-product-code="{{item.Masp}}">Thêm vào giỏ hàng</a>
+                                                            </div>
+                                                            <div class="bestseller"></div>
+                                                        </div>
+                                                        <div class="right-block">
+                                                            <h5 class="product-name"><a href="/Sanpham/Chitiet/?MaSP={{item.MaSP}}">{{item.TenSP}}</a></h5>
+                                                            <div class="content_price">
+                                                                <span class="price product-price"><span style="color: black">Price: </span>{{item.GiaKM}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>              
+        </div>
+     </div>
+</div>
+              
+          
+

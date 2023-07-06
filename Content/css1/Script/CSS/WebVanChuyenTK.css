@@ -1,0 +1,68 @@
+.projectsTK {
+    max-width: 1600px;
+    margin: 0px auto;
+}
+
+.projectsTK .row .content div {
+    height: 50px;
+    width: 98%;
+    background-color: white;
+    padding: 20px;
+    font-weight: 25px;
+    margin-bottom: 10px;
+}
+
+.projectsTK .row .content div a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.projectsTK .row .content div a:hover {
+    color: blue;
+}
+
+.content1 {
+    background-color: white;
+    width: 100%;
+    margin-top: 28px;
+    padding-top: 22px;
+}
+
+.thongtin {
+    height: 50px;
+    width: 60%;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.projectsTK .row .content1 form .thongtin .inputtt1 {
+    border-radius: 10px;
+    height: 90%;
+    width: 100%;
+    border: 1px solid rgb(190, 176, 176);
+    margin-top: 10px;
+}
+
+.projectsTK .row .content1 form .thongtin .inputtt {
+    background-color: blue;
+    border-radius: 10px;
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    margin-left: 22%;
+    font-weight: bold;
+    color: white;
+}
+
+.projectsTK .row .content1 form .thongtin .inputtt1:focus {
+    outline: none;
+}
+
+.noidung {
+    font-size: 18px;
+    float: left;
+    margin-left: 40px;
+    position: absolute;
+    background-color: white;
+}

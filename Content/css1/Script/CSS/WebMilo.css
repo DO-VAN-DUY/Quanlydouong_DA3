@@ -1,0 +1,354 @@
+.milo1 {
+    background-color: #f4f4f4;
+    height: 3250px;
+}
+
+.milott {
+    background-color: #f4f4f4;
+    height: 900px;
+}
+
+.milott .divnoibat1 .projects1 .row .milo11tt {
+    height: 2%;
+    width: 120px;
+    background-color: aqua;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.milott .divnoibat1 .projects1 .row .milo11tt a {
+    text-decoration: none;
+    color: black;
+}
+
+.milott .divnoibat1 .projects1 .row .milo11tt:hover {
+    background-color: blue;
+}
+
+.milott .divnoibat1 .projects1 .row .milo11tt a:hover {
+    color: white;
+}
+
+.milott .divnoibat1 .projects1 .row .milo12tt:hover {
+    background-color: blue;
+}
+
+.milott .divnoibat1 .projects1 .row .milo12tt a:hover {
+    color: white;
+}
+
+.milott .divnoibat1 .projects1 .row .milo12tt {
+    height: 2%;
+    width: 120px;
+    background-color: aqua;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.milott .divnoibat1 .projects1 .row .milo12tt a {
+    text-decoration: none;
+    color: black;
+}
+
+.milo11 {
+    height: 2%;
+    width: 90%;
+    background-color: aqua;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.milo12 {
+    height: 2%;
+    width: 90%;
+    background-color: aqua;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.milo1 .divnoibat .projects1 .milo13 .milo11 a {
+    text-decoration: none;
+    color: black;
+    line-height: 30px;
+}
+
+.milo1 .divnoibat .projects1 .milo13 .milo12 a {
+    text-decoration: none;
+    color: black;
+}
+
+.milo1 .divnoibat .projects1 .milo13 .milo12 a p {
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+.projects1 {
+    max-width: 1400px;
+    margin: 0px auto;
+}
+
+.projects1 .title {
+    border-bottom: 1px solid rgb(209, 205, 205);
+    color: blue;
+    font-size: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    /* background-color: blue; */
+    /* margin-left: 8px;
+    margin-right: 8px; */
+    -moz-box-shadow: 5px 5px 7px 0px #666;
+    -webkit-box-shadow: 5px 5px 7px 0px #666;
+    box-shadow: 5px 5px 7px 0px #666;
+}
+
+.divnoibat1 {
+    background-color: white;
+    max-width: 1400px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+html {
+    font-family: "Lucida Sans", sans-serif;
+    font-size: 14px;
+}
+
+/* For mobile phones: */
+
+[class*="col-"] {
+    width: 100%;
+    float: left;
+}
+
+@media only screen and (min-width: 780px) and (max-width: 1024px) {
+    /* For tablets: */
+    .col-s-1 {
+        width: 8.33%;
+    }
+    .col-s-2 {
+        width: 16.66%;
+    }
+    .col-s-3 {
+        width: 25%;
+    }
+    .col-s-4 {
+        width: 33.33%;
+    }
+    .col-s-5 {
+        width: 41.66%;
+    }
+    .col-s-6 {
+        width: 50%;
+    }
+    .col-s-7 {
+        width: 58.33%;
+    }
+    .col-s-8 {
+        width: 66.66%;
+    }
+    .col-s-9 {
+        width: 75%;
+    }
+    .col-s-10 {
+        width: 83.33%;
+    }
+    .col-s-11 {
+        width: 91.66%;
+    }
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+    .col-2 {
+        width: 16.66%;
+    }
+    .col-3 {
+        width: 25%;
+    }
+    .col-4 {
+        width: 33.33%;
+    }
+    .col-5 {
+        width: 41.66%;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    .col-7 {
+        width: 58.33%;
+    }
+    .col-8 {
+        width: 66.66%;
+    }
+    .col-9 {
+        width: 75%;
+    }
+    .col-10 {
+        width: 83.33%;
+    }
+    .col-11 {
+        width: 91.66%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+}
+
+.milo1 .divnoibat1 .projects1 .row .milo11 a {
+    text-decoration: none;
+    color: black;
+}
+
+.milo1 .divnoibat1 .projects1 .row .milo12 a {
+    text-decoration: none;
+    color: black;
+}
+
+.milo13 {
+    width: 10%;
+    height: 3220px;
+    float: left;
+    background-color: white;
+}
+
+.milo1 .divnoibat .projects1 .milo13 .milo11 a {
+    text-decoration: none;
+    color: black;
+}
+
+.milo1 .divnoibat .projects1 .milo13 .milo11 a:hover {
+    color: white;
+}
+
+.milo1 .divnoibat .projects1 .milo13 .milo11:hover {
+    background-color: blue;
+}
+
+.milo1 .divnoibat .projects1 .milo13 .milo12 a:hover {
+    color: white;
+}
+
+.milo1 .divnoibat .projects1 .milo13 .milo12:hover {
+    background-color: blue;
+}
+
+.milo2 {
+    background-color: #f4f4f4;
+    height: 550px;
+    width: 100%;
+}
+
+.milo2 .milo21 {
+    height: 100%;
+    max-width: 1400px;
+    background-color: white;
+    position: relative;
+}
+
+.milo2 .milo21 #myVideo {
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.milo3 {
+    height: 70px;
+    max-width: 1800px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.denmilo {
+    width: 15%;
+    height: 100%;
+    float: left;
+    background-color: white;
+    transform: skew(-20deg, 0deg);
+    -moz-transform: skew(-20deg, 0deg);
+    -webkit-transform: skew(-20deg, 0deg);
+    -o-transform: skew(-20deg, 0deg);
+    -ms-transform: skew(-20deg, 0deg);
+}
+
+.trangmilo {
+    width: 85%;
+    height: 100%;
+    float: right;
+    transform: skew(-20deg, 0deg);
+    background-color: white;
+    -moz-transform: skew(-20deg, 0deg);
+    -webkit-transform: skew(-20deg, 0deg);
+    -o-transform: skew(-20deg, 0deg);
+    -ms-transform: skew(-20deg, 0deg);
+    padding: 20px;
+}
+
+.milo5 {
+    background-color: #f4f4f4;
+    height: 230px;
+}
+
+.milo5 .milo51 {
+    height: 230px;
+    max-width: 1400px;
+    background-color: white;
+}
+
+.milo5 .milo51 .milo511 {
+    height: 100%;
+    width: 20%;
+    float: left;
+}
+
+.milo5 .milo51 .milo512 {
+    height: 100%;
+    width: 80%;
+    float: right;
+}
+
+.box1 {
+    border: 1px solid rgb(182, 168, 168);
+}
+
+.milo1 .divnoibat .projects1 .row .box1 img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.milo1 .divnoibat .projects1 .row .addicon input[type=text] {
+    padding-left: 10px;
+    
+}
+
+.milo1 .divnoibat .projects1 .row .addicon {
+    position: relative;
+    margin-left: 25px;
+}
+
+.milo1 .divnoibat .projects1 .row .addicon i {
+    position: absolute;
+    left: 8px;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 18px;
+}

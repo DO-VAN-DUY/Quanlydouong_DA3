@@ -1,0 +1,135 @@
+* {
+          box-sizing: border-box;
+          position: 0px;
+          margin: 0px;
+        }
+      
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        
+        html {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      /* For mobile phones: */
+      [class*="col-"] {
+          width: 100%;
+          float: left;
+        }
+        
+        @media only screen and (min-width: 600px) {
+          /* For tablets: */
+          .col-s-1 {width: 8.33%;}
+          .col-s-2 {width: 16.66%;}
+          .col-s-3 {width: 25%;}
+          .col-s-4 {width: 33.33%;}
+          .col-s-5 {width: 41.66%;}
+          .col-s-6 {width: 50%;}
+          .col-s-7 {width: 58.33%;}
+          .col-s-8 {width: 66.66%;}
+          .col-s-9 {width: 75%;}
+          .col-s-10 {width: 83.33%;}
+          .col-s-11 {width: 91.66%;}
+          .col-s-12 {width: 100%;}
+        }
+        @media only screen and (min-width: 768px) {
+          /* For desktop: */
+          .col-1 {width: 8.33%;}
+          .col-2 {width: 16.66%;}
+          .col-3 {width: 25%;}
+          .col-4 {width: 33.33%;}
+          .col-5 {width: 41.66%;}
+          .col-6 {width: 50%;}
+          .col-7 {width: 58.33%;}
+          .col-8 {width: 66.66%;}
+          .col-9 {width: 75%;}
+          .col-10 {width: 83.33%;}
+          .col-11 {width: 91.66%;}
+          .col-12 {width: 100%;}
+        }  
+ 
+        /*------------------------------------------------------------------*/
+       .panel .box img {
+           width: 100%;
+       }
+      
+       .panel .box {
+         padding: 10px;
+      }
+      .box-content{
+          border: 1px solid red; 
+          position: relative;
+       }
+      
+       .box-detail {
+          border-top: 1px solid red; 
+          text-align: center;
+          padding: 10px;
+       }
+       .box-name  {
+           color: black;
+           font-weight: bold;
+       }
+       .box-detail button {
+           border: none;
+           background-color: red;
+           line-height: 30px;
+           color: white;
+           text-transform: uppercase;
+       }
+      
+       .box-giamgia {
+           position: absolute;
+           top: 20px;
+           left: -5px;
+           background-color: red;
+           color: white; 
+           width: 30px;
+           height: 30px;
+           border-radius: 50%;
+           display: flex;
+           line-height: 30px;
+           font-size: 13px;
+       }
+      
+       .form-nhap {
+         padding: 20px;
+       }
+       .form-nhap input {
+         width: 100%;
+         line-height: 30px;
+       }
+      
+       .form-nhap select {
+        width: 100%;
+        padding: 8px;
+      }
+      #sanpham
+      {
+        border-bottom: 1px solid red;
+      }
+      .from-thanhtoan {
+        padding: 20px;
+      }
+      .thanhtoan {
+        margin-top: 10px;
+        border-bottom: 1px solid red;
+      }
+      .hang
+      {
+        margin-top: 10px;
+      }
+      .thanhtoan:last-child {
+        border: none;
+      }
+      .from-thanhtoan button {
+        border: none;
+         background-color:orange;
+         line-height: 35px;
+         color: white;
+         cursor: pointer;
+        
+      }

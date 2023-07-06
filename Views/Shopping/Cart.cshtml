@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="~/Scripts/angularScript/cart.js"></script>
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2>Other</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Cart</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div ng-controller="CartCtrl" class="hiraola-cart-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="">
+                    <div class="table-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    @*<th class="hiraola-product-price">STT</th>*@
+                                    <th class="hiraola-product-thumbnail">images</th>
+                                    <th class="cart-product-name">Product</th>
+                                    <th class="hiraola-product-price">Unit Price</th>
+                                    <th class="hiraola-product-quantity">Quantity</th>
+                                    <th class="hiraola-product-subtotal">Total</th>
+                                    <th class="hiraola-product-remove">remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in listSP">
+                                    @*<td class="hiraola-product-price">{{$index}}</td>*@
+                                    <td class="hiraola-product-thumbnail"><a href="javascript:void(0)"><img style="width:50px; height:50px" src="~/Content/images/product-detail/cayuuthich/{{item.Anh}}" alt="Hiraola's Cart Thumbnail"></a></td>
+                                    <td class="hiraola-product-name"><a href="javascript:void(0)">{{item.TenSP}}</a></td>
+                                    <td class="hiraola-product-price"><span class="amount">{{item.GiaKM| currency : value =""}}</span></td>
+                                    <td class="quantity">
+                                        <div ng-click="Tang(item.id)"><i style="border:1px solid #808080;padding:5px" class="fa fa-angle-up" ></i></div>
+                                        <input style="text-align:center" class="cart-plus-minus-box" id="q_{{Number(item.id)}}" ngModelChange="updateQuantity({{item.id}})" value="{{item.quantity}}" type="number" min="1" max="100">
+                                        <div ng-click="Giam(item.id)"><i style="border:1px solid #808080;padding:5px" class="fa fa-angle-down"></i> </div>
+                                    </td>
+                                    <td class="product-subtotal"><span class="amount">{{item.quantity * item.GiaKM| currency : value =""}}</span></td>
+                                    <td >
+                                        <a href="" ng-click="remove_cart($index)" style="padding:10px; background:#ec2d2d" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?')"><i class="fa fa-trash" style="color:#ffffff"></i></a>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 ml-auto">
+                            <div class="cart-page-total">
+                                <ul>
+                                    <li>Total <span>{{intomoney| currency:value=""}} vnđ</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="coupon-all">
+                                <div class="coupon" style="background:#ffd800; padding:10px;">
+
+                                    @Html.ActionLink("APPLY COUPON", "Index", "Home")
+                                </div>
+                                <div class="coupon2" style="background:#4cff00; padding:10px;">
+                                   <a ng-click="load()">SAVECART</a>
+                                </div>
+                                <div class="coupon2" style="background:#ffd800; padding:10px;">
+                                    @Html.ActionLink("CHECKOUT", "CheckOut", "Shopping")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

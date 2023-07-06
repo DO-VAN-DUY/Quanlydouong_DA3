@@ -1,0 +1,966 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: 0px;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    /*normal: kiểu chữ thường; italic: chữ nghiêng; oblique: nghiêng*/
+}
+
+.se1 {
+    height: 40px;
+    width: 100%;
+    background-color: #f4f4f4;
+}
+
+.se1 .se11 {
+    max-width: 1400px;
+    height: 100%;
+    font-size: 18px;
+}
+
+.se1 .se11 .se111 {
+    height: 100%;
+    width: 80%;
+    float: left;
+    text-align: right;
+    margin-top: 6px;
+}
+
+.se1 .se11 .se111 a {
+    text-decoration: none;
+    color: black;
+}
+
+.se1 .se11 .se111 a i {
+    color: blue;
+    font-size: 25px;
+}
+
+.se1 .se11 .se112 {
+    height: 100%;
+    width: 20%;
+    float: right;
+    text-align: right;
+    margin-top: 6px;
+}
+
+.se1 .se11 .se112 a {
+    text-decoration: none;
+    /*thiết lập đường kẻ cho chữ; underline: gạch chân dưới chữ; overline: gạch trên đầu chữ; line- through: gạch qua chữ*/
+    color: black;
+}
+
+.se1 .se11 .se112 a i {
+    color: blue;
+    font-size: 25px;
+}
+
+.se2 {
+    height: 150px;
+    background-color: #ffbe31;
+    position: sticky;
+    /*định và giúp phần tử luôn cố định một chỗ*/
+    top: 0px;
+    z-index: 1;
+}
+
+.se2 .se21 {
+    height: 40px;
+    margin-left: 230px;
+    background-color: #3f47cc;
+    border-radius: 50px 0px 0px 50px;
+    max-width: 2000px;
+}
+
+.se2 .se22 {
+    height: 110px;
+    margin-left: 200px;
+    background-color: #3f47cc;
+    border-radius: 50px 0px 0px 50px;
+    max-width: 2000px;
+}
+
+.se2 .se22 .se221 {
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.se2 .se22 .se221 img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50px 0px 0px 50px;
+    background-color: blue;
+}
+
+.se2 .se22 .se222 {
+    width: 35%;
+    height: 100%;
+    float: left;
+}
+
+.se2 .se22 .se222 .se2221 {
+    width: 80%;
+    height: 80%;
+    margin-top: 4px;
+    right: 0px;
+    float: left;
+}
+
+.se2 .se22 .se222 .se2221 input {
+    width: 90%;
+    height: 60%;
+    margin-left: 50px;
+    margin-top: 15px;
+    font-size: 18px;
+    border-radius: 10px 0px 0px 10px;
+    border: none;
+}
+
+.se2 .se22 .se222 .se2221 input:hover {
+    background-color: rgb(223, 208, 208);
+}
+
+.se2 .se22 .se222 .se2222 {
+    width: 20%;
+    height: 80%;
+    margin-top: 4px;
+    left: 0px;
+    float: right;
+}
+
+.se2 .se22 .se222 .se2222 button {
+    width: 70%;
+    height: 60%;
+    margin-right: 50px;
+    margin-top: 15px;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+}
+
+.se2 .se22 .se222 .se2222 button:hover {
+    background-color: rgb(223, 208, 208);
+}
+
+.abc:focus {
+    /*focus: chọn và tạo kiểu cho một trường nhập liệu khi nó được lấy tiêu điểm; tiêu điểm được phép trên các phần tử
+                      chấp nhận các sự kiện bàn phím hoặc các đầu vào của người sử dụng khác.*/
+    outline: none;
+}
+
+.se2 .se22 .se223 {
+    width: 5%;
+    height: 100%;
+    float: left;
+    /*chỉ định cách một phần tử sẽ nổi.*/
+}
+
+.se2 .se22 .se223 a i {
+    color: white;
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 30px;
+}
+
+.se2 .se22 .se224 {
+    width: 10%;
+    height: 100%;
+    float: left;
+}
+
+.se2 .se22 .se224 .se2241 {
+    height: 100%;
+    width: 20%;
+    float: left;
+}
+
+.se2 .se22 .se224 .se2241 a i {
+    color: white;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.se2 .se22 .se224 .se2242 {
+    height: 100%;
+    width: 80%;
+    float: left;
+    margin-top: 20px;
+}
+
+.se2 .se22 .se224 .se2242 a {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+}
+
+.se2 .se22 .se225 {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.se2 .se22 .se225 .se2251 {
+    height: 100%;
+    width: 8%;
+    float: left;
+}
+
+.se2 .se22 .se225 .se2251 a i {
+    color: white;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.se2 .se22 .se225 .se2252 {
+    height: 100%;
+    width: 80%;
+    float: left;
+    margin-top: 20px;
+}
+
+.se2 .se22 .se225 .se2252 a {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+}
+
+.se3 {
+    height: 40px;
+    background-color: #ffbe31;
+    position: sticky;
+    top: 150px;
+    z-index: 1;
+    /*tài sản quy định cụ thể trình tự ngăn xếp của một phần tử.
+                 Phần tử có thứ tự ngăn xếp lớn hơn luôn đứng trước phần tử có thứ tự ngăn xếp thấp hơn.*/
+}
+
+.se3 .menubig .menubig1 ul {
+    background-color: #ffbe31;
+}
+
+.se3 .menubig .menubig1 a {
+    color: rgb(19, 19, 170);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.se3 .menubig .menubig1 a i {
+    color: rgb(19, 19, 170);
+}
+
+.se3 .menubig .menubig1>ul>li {
+    display: inline-block;
+    /*Hiển thị một phần tử dưới dạng vùng chứa khối cấp nội tuyến. 
+                            Bản thân phần tử được định dạng là phần tử nội tuyến, nhưng bạn có thể áp dụng các giá trị chiều cao và chiều rộng*/
+    font-size: 14px;
+    line-height: 38px;
+    /*Đặt chiều cao dòng cho các phần tử <div> khác nhau*/
+    width: 200px;
+    /* height: 100%; */
+    position: relative;
+    text-align: center;
+}
+
+.submenu li {
+    font-size: 14px;
+    line-height: 30px;
+    width: 500px;
+    position: relative;
+    /*Định vị trí tuyệt đối cho các thành phần, không gây ảnh hưởng tới vị trí ban đầu hay các thành phần khác.*/
+    list-style: none;
+    /*thiết lập kiểu cho một danh sách*/
+    text-align: left;
+    /*Đặt căn chỉnh văn bản cho các phần tử <div> khác nhau*/
+    padding-left: 5px;
+    /*Padding tạo thêm không gian bên trong một phần tử, trong khi margin tạo thêm khoảng trống xung quanh một phần tử.*/
+}
+
+.se3 .menubig .menubig1 ul li a:hover {
+    color: black;
+}
+
+.se3 .menubig .menubig1 ul li:hover .submenu {
+    display: block;
+    /*block: Hiển thị một phần tử dưới dạng phần tử khối (như <p>). Nó bắt đầu trên một dòng mới và chiếm toàn bộ chiều rộng*/
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    /*Giá trị này sẽ giúp định vị trí tuyệt đối cho thành phần theo thành phần bao ngoài, hoặc ít nhất là theo cửa sổ trình duyệt.*/
+}
+
+.submenu li:hover .submenu1 {
+    display: block;
+    color: black;
+}
+
+.submenu1 {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: -205px;
+}
+
+.se3 .menubig {
+    position: -webkit-sticky;
+    position: sticky;
+    border-radius: 5px;
+    max-width: 1400px;
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+
+/*trang chủ thu nhỏ*/
+
+.sidebar {
+    display: none;
+}
+
+.sidebar a:hover {
+    color: blue;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    /*phần tử sẽ được định vị tương đối (positioned relative) so với trình duyệt.*/
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    /*overflow-x: dùng để tạo thanh scroll ngang cho phần tử;
+                        hidden: nếu chiều rộng phần nội dung lớn hơn chiều rộng phần tử thì phần nội dung dư thừa sẽ bị ẩn đi*/
+    padding-top: 60px;
+    text-transform: uppercase;
+    /*thiết lập các ký tự viết hoa cho văn bản.*/
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    border: none;
+    display: none;
+    padding: 10px;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+/*-----------------------reponsive*/
+
+/*for tab and mobile max width <1023px*/
+
+@media screen and (max-width: 1024px) {
+    .header__info {
+        display: none;
+    }
+    .openbtn {
+        display: block;
+    }
+    .fa-bars {
+        display: block;
+    }
+    .logo-cart {
+        display: none;
+    }
+    .menubig {
+        display: none;
+    }
+    .sidebar {
+        display: block;
+    }
+    .se2 {
+        display: none;
+    }
+    .an {
+        display: block;
+    }
+    .se1 .se11 .se111 {
+        width: 50%;
+        text-align: right;
+    }
+    .se1 .se11 .se112 {
+        width: 50%;
+        text-align: left;
+    }
+    .se1 .se11 .se112 a {
+        margin-left: 20px;
+    }
+}
+
+.se4 {
+    height: 40px;
+    max-width: 1800px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.den {
+    width: 15%;
+    height: 100%;
+    float: left;
+    background-color: blue;
+    transform: skew(-20deg, 0deg);
+    -moz-transform: skew(-20deg, 0deg);
+    -webkit-transform: skew(-20deg, 0deg);
+    -o-transform: skew(-20deg, 0deg);
+    -ms-transform: skew(-20deg, 0deg);
+}
+
+.trang {
+    width: 85%;
+    height: 100%;
+    float: right;
+    transform: skew(-20deg, 0deg);
+    /* transform xác định một chuyển đổi 2 chiều, 3 chiều, có thể là xoay, tỷ lệ, di chuyển, nghiêng, ...
+       skew(x-angle,y-angle): Xác định sự biến đổi nghiêng 2D dọc theo trục X và Y*/
+    background-color: white;
+    -moz-transform: skew(-20deg, 0deg);
+    -webkit-transform: skew(-20deg, 0deg);
+    -o-transform: skew(-20deg, 0deg);
+    -ms-transform: skew(-20deg, 0deg);
+    /*tạo độ chéo thành hình bình hành*/
+    padding: 15px;
+}
+
+.se5 {
+    height: 600px;
+    background-color: rgb(170, 210, 255);
+    margin-top: 5px;
+}
+
+.se5 .se51 {
+    height: 590px;
+    max-width: 1400px;
+}
+
+.se5 .se51 .se511 {
+    width: 68%;
+    height: 100%;
+    float: left;
+    position: relative;
+    margin: auto;
+    margin-top: 4px;
+}
+
+.se5 .se51 .se511 .mySlides img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.se5 .se51 .se512 {
+    width: 30%;
+    height: 100%;
+    float: right;
+}
+
+.mySlides {
+    display: none
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.se5 .se51 .se512 .se5121 {
+    height: 190px;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+
+.se5 .se51 .se512 .se5121 img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.se5 .se51 .se512 .se5122 {
+    height: 190px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.se5 .se51 .se512 .se5122 img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.se5 .se51 .se512 .se5123 {
+    height: 190px;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.se5 .se51 .se512 .se5123 img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.se8 {
+    background-color: #f4f4f4;
+}
+
+.se8 .divnoibat .projects .noibat1 .divnoibat12 {
+    width: 30%;
+    float: right;
+    text-align: right;
+}
+
+.se8 .divnoibat .projects .noibat1 .divnoibat12 button {
+    padding: auto;
+    color: blue;
+    font-size: 25px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid blue;
+}
+
+.se8 .divnoibat .projects .noibat1 .divnoibat12 button i {
+    color: blue;
+}
+
+.se8 .divnoibat .projects .noibat1 {
+    color: blue;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+html {
+    font-family: "Lucida Sans", sans-serif;
+    font-size: 14px;
+}
+
+/* For mobile phones: */
+
+[class*="col-"] {
+    width: 100%;
+    float: left;
+}
+
+@media only screen and (min-width: 780px) and (max-width: 1024px) {
+    /* For tablets: */
+    .col-s-1 {
+        width: 8.33%;
+    }
+    .col-s-2 {
+        width: 16.66%;
+    }
+    .col-s-3 {
+        width: 25%;
+    }
+    .col-s-4 {
+        width: 33.33%;
+    }
+    .col-s-5 {
+        width: 41.66%;
+    }
+    .col-s-6 {
+        width: 50%;
+    }
+    .col-s-7 {
+        width: 58.33%;
+    }
+    .col-s-8 {
+        width: 66.66%;
+    }
+    .col-s-9 {
+        width: 75%;
+    }
+    .col-s-10 {
+        width: 83.33%;
+    }
+    .col-s-11 {
+        width: 91.66%;
+    }
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+    .col-2 {
+        width: 16.66%;
+    }
+    .col-3 {
+        width: 25%;
+    }
+    .col-4 {
+        width: 33.33%;
+    }
+    .col-5 {
+        width: 41.66%;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    .col-7 {
+        width: 58.33%;
+    }
+    .col-8 {
+        width: 66.66%;
+    }
+    .col-9 {
+        width: 75%;
+    }
+    .col-10 {
+        width: 83.33%;
+    }
+    .col-11 {
+        width: 91.66%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+    .an {
+        display: none;
+    }
+}
+
+.projects .title {
+    border-bottom: 1px solid rgb(209, 205, 205);
+    color: blue;
+    font-size: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    /* background-color: blue; */
+    /* margin-left: 8px;
+    margin-right: 8px; */
+    -moz-box-shadow: 5px 5px 7px 0px #666;
+    -webkit-box-shadow: 5px 5px 7px 0px #666;
+    box-shadow: 5px 5px 7px 0px #666;
+}
+
+.projects {
+    max-width: 1400px;
+    margin: 0px auto;
+}
+
+.noibat {
+    color: blue;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.noibata {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(120, 120, 128);
+}
+
+.divnoibat {
+    background-color: white;
+    max-width: 1400px;
+}
+
+.projects .row .addicon button[type=text] {
+    padding-left: 30px;
+}
+
+.projects .row .addicon {
+    position: relative;
+}
+
+.projects .row .addicon i {
+    position: absolute;
+    left: 8px;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.content {
+    padding: 25px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.content img {
+    width: 100%;
+    height: 230px;
+    border-radius: 5px;
+    transition: all 1s ease;
+}
+
+.content img:hover {
+    transform: scale(1.9);
+}
+
+.content .goctrai {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    padding: 15px;
+    opacity: 0.8;
+    border-radius: 50%;
+}
+
+.row button {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.row button:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
+.row button {
+    width: 90%;
+    margin-bottom: 5px;
+}
+
+.row .tenhang {
+    margin-top: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.row .gia {
+    color: red;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.se7 {
+    background-color: #f4f4f4;
+}
+
+.se7 .divnoibat .projects .sale {
+    text-align: right;
+}
+
+.se7 .divnoibat .projects .sale a {
+    text-decoration: none;
+    color: blue;
+    font-size: 18px;
+}
+
+.se7 .divnoibat .projects .sale a:hover {
+    color: red;
+}
+
+.se6 {
+    background-color: #f4f4f4;
+    height: 190px;
+}
+
+.se6 .se61 {
+    height: 190px;
+    max-width: 1400px;
+    background-color: white;
+}
+
+.se6 .se61 .se611 {
+    height: 100%;
+    width: 20%;
+    float: left;
+}
+
+.se6 .se61 .se612 {
+    height: 100%;
+    width: 80%;
+    float: right;
+}
+
+.box {
+    border: 1px solid rgb(182, 168, 168);
+}
+
+del {
+    color: #666;
+    text-decoration: line-through;
+    font-size: 17px;
+}
+
+.an {
+    height: 150px;
+    background-color: rgb(74, 74, 187);
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+/* Full-width input fields */
+
+.modal input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    /*- Chiều rộng (chiều cao) được thiết lập từ thuộc tính width (height) chính là chiều rộng (chiều cao) của nguyên cả phần tử.*/
+}
+
+/* Set a style for all buttons */
+
+.modal button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal button:hover {
+    opacity: 0.8;
+    /*độ mờ*/
+}
+
+/* Extra styles for the cancel button */
+
+.modal .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+
+/* .modal .icontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+} */
+
+.modal .container input {
+    border-radius: 5px;
+}
+
+/* .modal i.avatar {
+    width: 40%;
+    border-radius: 50%;
+} */
+
+.modal .container {
+    padding: 16px;
+}
+
+.modal span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999999;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /*Phần tràn được cắt bớt và một thanh cuộn được thêm vào để xem phần còn lại của nội dung*/
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+
+.modal .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 30%;
+    position: relative;
+}
+
+.secall {
+    width: 100%;
+    background-color: rgb(0, 204, 255);
+    height: 200px;
+}
+
+.secall .projects .row .content .nhap {
+    width: 100%;
+    height: 50px;
+    margin-top: 5px;
+}
+
+.secall .projects .row .content table {
+    margin-top: 20px;
+}
+
+.secall .projects .row .content table tr td {
+    width: 30%;
+    font-size: 20px;
+    color: white;
+}
+
+.chon{background-color: white; color: black;}

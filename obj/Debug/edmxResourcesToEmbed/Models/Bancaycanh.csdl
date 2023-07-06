@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBancaycanhModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CTHDN">
+    <Key>
+      <PropertyRef Name="MaCTN" />
+    </Key>
+    <Property Name="MaCTN" Type="Int32" Nullable="false" />
+    <Property Name="MaHDN" Type="Int32" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Tong" Type="Int32" />
+    <Property Name="Gia" Type="Int32" />
+    <NavigationProperty Name="HDNN" Relationship="Self.FK_CTHDN_HDNN" FromRole="CTHDN" ToRole="HDNN" />
+  </EntityType>
+  <EntityType Name="CTXuat">
+    <Key>
+      <PropertyRef Name="MaCTB" />
+    </Key>
+    <Property Name="MaCTB" Type="Int32" Nullable="false" />
+    <Property Name="MaHD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaSP" Type="Int32" />
+    <Property Name="Soluong" Type="Int32" />
+    <NavigationProperty Name="Hoadonxuat" Relationship="Self.FK_CTXuats_Hoadonxuat" FromRole="CTXuats" ToRole="Hoadonxuat" />
+    <NavigationProperty Name="Sanpham" Relationship="Self.FK_CTXuats_Sanphams" FromRole="CTXuats" ToRole="Sanphams" />
+  </EntityType>
+  <EntityType Name="Giohang">
+    <Key>
+      <PropertyRef Name="Magio" />
+    </Key>
+    <Property Name="Magio" Type="Int32" Nullable="false" />
+    <Property Name="Tensp" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="Tong" Type="Int32" />
+    <Property Name="Masp" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HDNN">
+    <Key>
+      <PropertyRef Name="MaHDN" />
+    </Key>
+    <Property Name="MaHDN" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="Int32" />
+    <Property Name="Diachinhap" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaynhap" Type="DateTime" Precision="3" />
+    <Property Name="NgaylapHD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CTHDNs" Relationship="Self.FK_CTHDN_HDNN" FromRole="HDNN" ToRole="CTHDN" />
+    <NavigationProperty Name="Nhanvien" Relationship="Self.FK_HDNN_Nhanviens" FromRole="HDNN" ToRole="Nhanviens" />
+  </EntityType>
+  <EntityType Name="Hoadonxuat">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Hoten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="NgaylapHD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CTXuats" Relationship="Self.FK_CTXuats_Hoadonxuat" FromRole="Hoadonxuat" ToRole="CTXuats" />
+  </EntityType>
+  <EntityType Name="Khachhang">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="Int32" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDTKH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="DiachiKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LoaiSP">
+    <Key>
+      <PropertyRef Name="MALOAI" />
+    </Key>
+    <Property Name="MALOAI" Type="Int32" Nullable="false" />
+    <Property Name="Tenloai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sanphams" Relationship="Self.FK_Sanphams_LoaiSPs" FromRole="LoaiSPs" ToRole="Sanphams" />
+  </EntityType>
+  <EntityType Name="Nhanvien">
+    <Key>
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MANV" Type="Int32" Nullable="false" />
+    <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDTNV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="DiachiKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AnhNV" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="HDNNs" Relationship="Self.FK_HDNN_Nhanviens" FromRole="Nhanviens" ToRole="HDNN" />
+    <NavigationProperty Name="Tinchamsoccays" Relationship="Self.FK_Tinchamsoccays_Nhanviens" FromRole="Nhanviens" ToRole="Tinchamsoccays" />
+  </EntityType>
+  <EntityType Name="Sanpham">
+    <Key>
+      <PropertyRef Name="MASP" />
+    </Key>
+    <Property Name="MASP" Type="Int32" Nullable="false" />
+    <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Khuyenmai" Type="Int32" />
+    <Property Name="giamoi" Type="Int32" />
+    <Property Name="giacu" Type="Int32" />
+    <Property Name="MALOAI" Type="Int32" />
+    <Property Name="AnhNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CTXuats" Relationship="Self.FK_CTXuats_Sanphams" FromRole="Sanphams" ToRole="CTXuats" />
+    <NavigationProperty Name="LoaiSP" Relationship="Self.FK_Sanphams_LoaiSPs" FromRole="Sanphams" ToRole="LoaiSPs" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tinchamsoccay">
+    <Key>
+      <PropertyRef Name="Matin" />
+    </Key>
+    <Property Name="Matin" Type="Int32" Nullable="false" />
+    <Property Name="Tentin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Anh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Noidung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaNV" Type="Int32" />
+    <NavigationProperty Name="Nhanvien" Relationship="Self.FK_Tinchamsoccays_Nhanviens" FromRole="Tinchamsoccays" ToRole="Nhanviens" />
+  </EntityType>
+  <EntityType Name="Usess">
+    <Key>
+      <PropertyRef Name="MaNguoiDung" />
+    </Key>
+    <Property Name="MaNguoiDung" Type="Int32" Nullable="false" />
+    <Property Name="Taikhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Matkhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_CTHDN_HDNN">
+    <End Role="HDNN" Type="Self.HDNN" Multiplicity="0..1" />
+    <End Role="CTHDN" Type="Self.CTHDN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HDNN">
+        <PropertyRef Name="MaHDN" />
+      </Principal>
+      <Dependent Role="CTHDN">
+        <PropertyRef Name="MaHDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTXuats_Hoadonxuat">
+    <End Role="Hoadonxuat" Type="Self.Hoadonxuat" Multiplicity="0..1" />
+    <End Role="CTXuats" Type="Self.CTXuat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hoadonxuat">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="CTXuats">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTXuats_Sanphams">
+    <End Role="Sanphams" Type="Self.Sanpham" Multiplicity="0..1" />
+    <End Role="CTXuats" Type="Self.CTXuat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanphams">
+        <PropertyRef Name="MASP" />
+      </Principal>
+      <Dependent Role="CTXuats">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDNN_Nhanviens">
+    <End Role="Nhanviens" Type="Self.Nhanvien" Multiplicity="0..1" />
+    <End Role="HDNN" Type="Self.HDNN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhanviens">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="HDNN">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sanphams_LoaiSPs">
+    <End Role="LoaiSPs" Type="Self.LoaiSP" Multiplicity="0..1" />
+    <End Role="Sanphams" Type="Self.Sanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiSPs">
+        <PropertyRef Name="MALOAI" />
+      </Principal>
+      <Dependent Role="Sanphams">
+        <PropertyRef Name="MALOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tinchamsoccays_Nhanviens">
+    <End Role="Nhanviens" Type="Self.Nhanvien" Multiplicity="0..1" />
+    <End Role="Tinchamsoccays" Type="Self.Tinchamsoccay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhanviens">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="Tinchamsoccays">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLBancaycanh" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTHDNs" EntityType="Self.CTHDN" />
+    <EntitySet Name="CTXuats" EntityType="Self.CTXuat" />
+    <EntitySet Name="Giohangs" EntityType="Self.Giohang" />
+    <EntitySet Name="HDNNs" EntityType="Self.HDNN" />
+    <EntitySet Name="Hoadonxuats" EntityType="Self.Hoadonxuat" />
+    <EntitySet Name="Khachhangs" EntityType="Self.Khachhang" />
+    <EntitySet Name="LoaiSPs" EntityType="Self.LoaiSP" />
+    <EntitySet Name="Nhanviens" EntityType="Self.Nhanvien" />
+    <EntitySet Name="Sanphams" EntityType="Self.Sanpham" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tinchamsoccays" EntityType="Self.Tinchamsoccay" />
+    <EntitySet Name="Usesses" EntityType="Self.Usess" />
+    <AssociationSet Name="FK_CTHDN_HDNN" Association="Self.FK_CTHDN_HDNN">
+      <End Role="HDNN" EntitySet="HDNNs" />
+      <End Role="CTHDN" EntitySet="CTHDNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTXuats_Hoadonxuat" Association="Self.FK_CTXuats_Hoadonxuat">
+      <End Role="Hoadonxuat" EntitySet="Hoadonxuats" />
+      <End Role="CTXuats" EntitySet="CTXuats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTXuats_Sanphams" Association="Self.FK_CTXuats_Sanphams">
+      <End Role="Sanphams" EntitySet="Sanphams" />
+      <End Role="CTXuats" EntitySet="CTXuats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDNN_Nhanviens" Association="Self.FK_HDNN_Nhanviens">
+      <End Role="Nhanviens" EntitySet="Nhanviens" />
+      <End Role="HDNN" EntitySet="HDNNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sanphams_LoaiSPs" Association="Self.FK_Sanphams_LoaiSPs">
+      <End Role="LoaiSPs" EntitySet="LoaiSPs" />
+      <End Role="Sanphams" EntitySet="Sanphams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tinchamsoccays_Nhanviens" Association="Self.FK_Tinchamsoccays_Nhanviens">
+      <End Role="Nhanviens" EntitySet="Nhanviens" />
+      <End Role="Tinchamsoccays" EntitySet="Tinchamsoccays" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QLBancaycanhModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QLBancaycanhModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="thanhtien">
+      <Parameter Name="MaSach" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

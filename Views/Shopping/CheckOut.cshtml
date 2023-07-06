@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "CheckOut";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="~/Scripts/angularScript/checkout.js"></script>
+<!-- Begin Hiraola's Breadcrumb Area -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2>Other</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Checkout</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div ng-controller="CheckOutCtrl" class="checkout-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <form action="javascript:void(0)">
+                    <div class="checkbox-form">
+                        <h3>Billing Details</h3>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Khách hàng <span class="required">*</span></label>
+                                    <input placeholder="Name" type="text" id="HoTen">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Địa chỉ <span class="required">*</span></label>
+                                    <input placeholder="Street address" type="text" id="DiaChi">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Ngày lập <span class="required">*</span></label>
+                                    <div style="border:1px solid #808080">
+                                        <input type="date" id="ngaylap">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="your-order">
+                    <h3>Đơn hàng của bạn</h3>
+                    <div class="your-order-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="cart-product-name">Product</th>
+                                    <th class="cart-product-total">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in listSP" class="cart_item">
+                                    <td class="cart-product-name">
+                                        {{item.TenSP}}<strong class="product-quantity">
+                                            × {{item.quantity}}
+                                        </strong>
+                                    </td>
+                                    <td class="cart-product-total"><span class="amount">{{item.quantity*item.GiaKM}}</span></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="order-total">
+                                    <th>Order Total</th>
+                                    <td><strong><span class="amount">{{total}} vnđ</span></strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="order-button-payment">
+                        <input value="Place order" type="button" ng-click="CreateHoaDon()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
